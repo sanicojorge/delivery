@@ -1,0 +1,44 @@
+<div class="panel panel-default">
+
+	<div class="panel-heading">
+		<strong>Cliente {{cliid}}</strong>
+	</div>
+
+	<div class="panel-body">
+
+		<form class="form-horizontal">
+			<div class="form-group"ng-hide="action == 'add'" >
+		    <label for="request_id" class="col-md-2 control-label">Id</label>
+		    <div class="col-md-3">
+		      <input type="number" class="form-control" id="request_id" placeholder="Id" ng-model="data.id" ng-disabled="action != 'add'"/>
+		    </div>
+		  </div>
+
+			<div class="form-group">
+					    <label for="request_date" class="col-md-2 control-label">Fecha</label>
+					    <div class="col-md-3">
+					      <input type="date" class="form-control" id="request_date" placeholder="Fecha" ng-model="data.date" ng-disabled="action == 'view'">
+					    </div>
+			</div>
+
+		  <div class="form-group">
+		    <label for="request_observation" class="col-md-2 control-label">Observaciones</label>
+		    <div class="col-md-3">
+					<!-- <div class="input-group-addon">$</div> -->
+		      <input type="text" class="form-control" id="request_observationr" placeholder="Observaciones" ng-model="data.observation" ng-disabled="action == 'view'">
+		    </div>
+		  </div>
+
+
+
+		  <div class="form-group">
+		    <div class="col-md-offset-2 col-md-3">
+		      <button type="submit" class="btn btn-primary" ng-click="save()" ng-show="action == 'add'">Create</button>
+		      <button type="submit" class="btn btn-primary" ng-click="update()" ng-show="action == 'edit'">Update</button>
+		      <button type="submit" class="btn btn-primary" ng-click="cancel()">Cancel</button>
+		    </div>
+		  </div>
+
+		</form>
+	</div>
+</div>

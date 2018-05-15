@@ -1,0 +1,39 @@
+<div class="panel panel-default">
+
+	<div class="panel-heading">
+		<strong>Clientes</strong>
+	</div>
+
+	<div class="panel-body">
+		<form class="form-horizontal">
+		  <div class="form-group" ng-hide="action == 'new'">
+		    <label for="cli_id" class="col-md-2 control-label">N Cliente</label>
+		    <div class="col-md-3">
+		      <input type="number" class="form-control" id="cli_id" placeholder="Id" ng-model="data.id" ng-disabled="action != 'new'"/>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="emp_name" class="col-md-2 control-label">Nombre</label>
+		    <div class="col-md-3">
+		      <input type="text" class="form-control" id="cli_name" placeholder="Name" ng-model="data.name" ng-disabled="action != 'new'">
+		    </div>
+		  </div>
+			<div class="form-group">
+		    <label for="cli_cuil" class="col-md-2 control-label">Cuil</label>
+		    <div class="col-md-3">
+					<!-- <div class="input-group-addon">$</div> -->
+		      <input type="text" class="form-control" id="cli_cuil" placeholder="Cuil" ng-model="data.cuil" ng-disabled="action == 'view'">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-md-offset-2 col-md-3">
+		      <button type="submit" class="btn btn-primary" ng-click="save()" ng-show="action == 'new'">Crear</button>
+		      <button type="submit" class="btn btn-primary" ng-click="update()" ng-show="action == 'edit'">Actualizar</button>
+		      <button type="submit" class="btn btn-primary" ng-click="cancel()">Cancelar</button>
+		    </div>
+		  </div>
+		</form>
+	</div>
+</div>
+
+<div ng-show="action == 'view'" ng-include="'partials/request-list.html'"></div>
