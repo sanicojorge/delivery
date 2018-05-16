@@ -1,4 +1,5 @@
 package model;
+import javax.persistence.GeneratedValue;
 
 import javax.persistence.Entity;
 import javax.persistence.Column;
@@ -16,7 +17,9 @@ public class Product {
     private Float price;
     private Float stock;
     private String unit;
-    
+    public Product(){
+        
+    }    
     public Product(int id, String name, String description, Float price, Float stock, String unit){
         this.id = id;
         this.name = name;

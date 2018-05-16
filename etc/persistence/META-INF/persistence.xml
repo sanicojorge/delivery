@@ -3,7 +3,8 @@
     <jta-data-source>jdbc/delivery</jta-data-source>
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>model.Client</class>
-    <class>model.Phone</class>
+    <class>model.Request</class>
+    <class>model.Product</class>
     <properties>
       <property name="eclipselink.target-database" value="DERBY"/>
       <property name="eclipselink.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
