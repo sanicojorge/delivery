@@ -61,19 +61,19 @@ public class RequestServiceBean implements RequestService {
 
     public Client updateClientRequest(int cliId, Request request) {
         Client cli = em.find(Client.class, cliId);
-
+        Request req= em.find(Request.class, request.getId());
         if (cli == null){
           return null;
         }
+        req.setDate(request.getDate());
+        req.setObservation(request.getObservation());
 
-        if(cli.getRequests().removeIf(p -> p.getId() == request.getId())){
-          em.persist(request);
-          cli.addRequest(request);
+          em.persist(req);
           em.persist(cli);
           return cli;
-        }
+        
 
-        return null;
+        
     }
 
 }

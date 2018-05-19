@@ -7,6 +7,18 @@ app.config(['$routeProvider', function(routeprovider) {
 		templateUrl:'partials/client-list.html',
 		controller: 'ClientsCtrl'
 	})
+	.when('/product/',{
+		templateUrl:'partials/product-list.html',
+		controller: 'ProductsCtrl'
+	})
+	.when('/product/:id/:action',{
+		templateUrl:'partials/product-form.html',
+		controller: 'ProductCtrl'
+	})
+	.when('/product/:action',{
+		templateUrl:'partials/product-form.html',
+		controller: 'ProductCtrl'
+	})
 	.when('/:action',{
 		templateUrl:'partials/client-form.html',
 		controller: 'ClientCtrl'
@@ -23,6 +35,7 @@ app.config(['$routeProvider', function(routeprovider) {
 		templateUrl:'partials/request-form.html',
 		controller: 'RequestCtrl'
 	})
+		
 	.otherwise({
 		templateUrl: 'partials/404.html'
 	})

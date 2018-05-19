@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import model.Client;
 import model.Request;
 
+
 public interface RequestService {
     public void setEntityManager(EntityManager emLocal);
 
@@ -16,4 +17,5 @@ public interface RequestService {
     public Client removeClientRequest(int id, int request_id);
     public Client addClientRequest(int cliId, Request request);
     public Client updateClientRequest(int cliId, Request request);
+    
 }
